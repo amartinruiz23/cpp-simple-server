@@ -9,7 +9,7 @@ int main(int argc, char const *argv[]) {
   //std::cout << c.Get("Hello") << c.Get("world") << std::endl;
 
   std::cout << "Meteologica server" << std::endl;
-  Server sss(AF_INET, SOCK_STREAM, 0, 9997, INADDR_ANY, 10, size);
+  Server sss(AF_INET, SOCK_STREAM, 0, 9999, INADDR_ANY, 10, size);
   std::cout << "Success" << std::endl;
 
   return 0;

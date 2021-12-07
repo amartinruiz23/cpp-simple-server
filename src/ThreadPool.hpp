@@ -1,3 +1,10 @@
+#include <thread> // std::thread
+#include <vector> // std::vector
+#include <queue> // std::queue
+#include <mutex> // std::mutex
+#include <condition_variable> // std::condition_variable
+#include <vector>
+
 class ThreadPool {
 
  public:
@@ -27,7 +34,8 @@ class ThreadPool {
   bool done;
 
   // Function used by the threads to grab work from the queue
-  void doWork;
+  void doWork();
 
-  virtual void processRequest(const std::pair<int, std::string>);
+  virtual void processRequest(const std::pair<int, std::string>) = 0;
+
 };
