@@ -2,6 +2,8 @@
 
 // Constructor
 
+const int TIMEOUT_SECONDS = 5;
+
 Socket::Socket(int domain, int service, int protocol, int port, u_long interface){
 
   // Stablish socket
@@ -12,6 +14,11 @@ Socket::Socket(int domain, int service, int protocol, int port, u_long interface
   address.sin_family = domain;
   address.sin_addr.s_addr = htonl(interface); //htonl necesario????
   address.sin_port = htons(port); // htons is necessary to convert a number to network byte order
+
+  struct timeval tv;
+  tv.tv_sec = TIMEOUT_SECONDS;
+  tv.tv_usec = 0;
+  setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof tv);
 
 }
 

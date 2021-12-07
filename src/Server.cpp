@@ -1,5 +1,9 @@
 #include "Server.hpp"
 
+extern sig_atomic_t finish;
+extern sig_atomic_t flush;
+
+
 Server::Server(int domain, int service, int protocol, int port,
   u_long interface, int bklg, std::size_t cache_size):tp(cache_size){
 
@@ -21,7 +25,7 @@ std::pair<int,std::string> Server::accepter(){
 
   auto bytes_received = read(new_connection, &output[0], BUFFER_SIZE-1);
   if (bytes_received<0) {
-    std::cerr << "Failed to read data from socket.\n";
+    //std::cerr << "Failed to read data from socket.\n";
     return std::make_pair(new_connection,"");
   }
 
@@ -41,7 +45,12 @@ std::pair<int,std::string> Server::accepter(){
 void Server::launch(){
   int i = 5;
 
-  while(true){
+  while(!finish){
+    if(flush){
+      tp.cacheClear();
+      flush = 0;
+    }
+    std::cout<<"server finish: "<<finish<<std::endl;
     i--;
     //std::cout<<"-------"<<std::endl;
     std::pair<int, std::string> request = accepter();

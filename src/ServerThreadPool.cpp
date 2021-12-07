@@ -40,8 +40,8 @@ ServerThreadPool::~ServerThreadPool(){
 
 void ServerThreadPool::processRequest(const std::pair<int, std::string> request){
 
-    std::thread::id this_id = std::this_thread::get_id();
-    std::cout<<"thread id: "<< this_id<<std::endl;
+    //std::thread::id this_id = std::this_thread::get_id();
+    //std::cout<<"thread id: "<< this_id<<std::endl;
     int milisecs = 5000;
     std::string text;
     //std::string message = std::string(buffer);
@@ -94,4 +94,8 @@ void ServerThreadPool::processRequest(const std::pair<int, std::string> request)
     //std::cout << msg << std::endl;
     //return msg;
     close(request.first);
+}
+
+void ServerThreadPool::cacheClear(){
+  cache.clear();
 }

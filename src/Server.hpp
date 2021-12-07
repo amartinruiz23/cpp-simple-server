@@ -1,3 +1,5 @@
+#include <csignal>
+
 #include "BindingSocket.hpp"
 #include "ServerThreadPool.hpp"
 
