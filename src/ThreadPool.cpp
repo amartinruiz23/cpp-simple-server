@@ -13,7 +13,7 @@ ThreadPool::ThreadPool() : done(false) {
     // The threads will execute the private member `doWork`. Note that we need
     // to pass a reference to the function (namespaced with the class name) as
     // the first argument, and the current object as second argument
-    threads.push_back(std::thread(&ThreadPool::doWork, this));
+    threads.push_back(std::thread(&ThreadPool::do_work, this));
   }
 }
 
@@ -25,7 +25,7 @@ ThreadPool::~ThreadPool() {
   done = true;
 
   // Wake up all the threads, so they can finish and be joined
-  workQueueConditionVariable.notify_all();
+  work_queue_condition_variable.notify_all();
   for (auto& thread : threads) {
     if (thread.joinable()) {
       thread.join();
@@ -35,29 +35,29 @@ ThreadPool::~ThreadPool() {
 
 // This function will be called by the server every time there is a request
 // that needs to be processed by the thread pool
-void ThreadPool::queueWork(int fd, std::string& request) {
+void ThreadPool::queue_work(int fd, std::string& request) {
   // Grab the mutex
-  std::lock_guard<std::mutex> g(workQueueMutex);
+  std::lock_guard<std::mutex> g(work_queue_mutex);
 
   // Push the request to the queue
-  workQueue.push(std::pair<int, std::string>(fd, request));
+  work_queue.push(std::pair<int, std::string>(fd, request));
 
   // Notify one thread that there are requests to process
-  workQueueConditionVariable.notify_one();
+  work_queue_condition_variable.notify_one();
 }
 
-void ThreadPool::doWork() {
+void ThreadPool::do_work() {
   // Loop while the queue is not destructing
   while (!done) {
     std::pair<int, std::string> request;
 
     // Create a scope, so we don't lock the queue for longer than necessary
     {
-      std::unique_lock<std::mutex> g(workQueueMutex);
-      workQueueConditionVariable.wait(g, [&]{
+      std::unique_lock<std::mutex> g(work_queue_mutex);
+      work_queue_condition_variable.wait(g, [&]{
         // Only wake up if there are elements in the queue or the program is
         // shutting down
-        return !workQueue.empty() || done;
+        return !work_queue.empty() || done;
       });
 
       // If we are shutting down exit witout trying to process more work
@@ -65,10 +65,10 @@ void ThreadPool::doWork() {
         break;
       }
 
-      request = workQueue.front();
-      workQueue.pop();
+      request = work_queue.front();
+      work_queue.pop();
     }
 
-    processRequest(request);
+    process_request(request);
   }
 }

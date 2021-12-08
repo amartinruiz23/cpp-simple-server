@@ -47,14 +47,14 @@ void Server::launch(){
 
   while(!finish){
     if(flush){
-      tp.cacheClear();
+      tp.cache_clear();
       flush = 0;
     }
     //std::cout<<"server finish: "<<finish<<std::endl;
     //i--;
     //std::cout<<"-------"<<std::endl;
     std::pair<int, std::string> request = accepter();
-    tp.queueWork(request.first, request.second);
+    tp.queue_work(request.first, request.second);
     //if (i == 2){
       //std::cout<<cache<<std::endl;
       //cache.clear();

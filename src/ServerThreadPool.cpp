@@ -9,7 +9,7 @@ ServerThreadPool::~ServerThreadPool(){
 
 }
 
-void ServerThreadPool::processRequest(const std::pair<int, std::string> request){
+void ServerThreadPool::process_request(const std::pair<int, std::string> request){
 
     //std::thread::id this_id = std::this_thread::get_id();
     //std::cout<<"thread id: "<< this_id<<std::endl;
@@ -38,16 +38,15 @@ void ServerThreadPool::processRequest(const std::pair<int, std::string> request)
       if (is_number(sections[2])){ // si es número
         text = sections[1];
 
-        if (cache.Exists(text)){
-          //return Server::cache.Get(text);
-          std::string msg_hash = cache.Get(text);
+        if (cache.exists(text)){
+          std::string msg_hash = cache.get(text);
           msg_hash.insert(msg_hash.end(), '\n');
           send(request.first, msg_hash.c_str(), msg_hash.size(), 0);
         } else {
           milisecs = std::stoi(sections[2]);
           std::this_thread::sleep_for(std::chrono::milliseconds(milisecs));
           std::string msg_hash = hash(text);
-          cache.Put(text, msg_hash);
+          cache.put(text, msg_hash);
           msg_hash.insert(msg_hash.end(), '\n');
           //std::cout << hash(text) << std::endl;
           send(request.first, msg_hash.c_str(), msg_hash.size(), 0);
@@ -70,6 +69,6 @@ void ServerThreadPool::processRequest(const std::pair<int, std::string> request)
     close(request.first);
 }
 
-void ServerThreadPool::cacheClear(){
+void ServerThreadPool::cache_clear(){
   cache.clear();
 }

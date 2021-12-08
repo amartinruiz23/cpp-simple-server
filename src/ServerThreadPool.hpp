@@ -14,8 +14,8 @@ public:
   ServerThreadPool(std::size_t cache_size);
   ~ServerThreadPool(); //TODO: ¿No necesario?
 
-  void processRequest(const std::pair<int, std::string> request);
-  void cacheClear();
+  void process_request(const std::pair<int, std::string> request);
+  void cache_clear();
 
 private:
   Cache<std::string, std::string> cache;

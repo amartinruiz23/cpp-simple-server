@@ -23,7 +23,7 @@ class Cache {
     }
   }
 
-  void Put(const Key& key, const Value& value) {
+  void put(const Key& key, const Value& value) {
     operation_guard og{safe_op};
     auto it = cache_items_map.find(key);
 
@@ -46,7 +46,7 @@ class Cache {
     }
   }
 
-  Value& Get(const Key& key) {
+  Value& get(const Key& key) {
     operation_guard og{safe_op};
     auto it = cache_items_map.find(key);
 
@@ -61,7 +61,7 @@ class Cache {
     }
   }
 
-  bool Exists(const Key& key) {
+  bool exists(const Key& key) {
     operation_guard og{safe_op};
 
     return cache_items_map.find(key) != cache_items_map.end();
