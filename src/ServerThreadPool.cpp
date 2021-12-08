@@ -14,7 +14,6 @@ void ServerThreadPool::process_request(const std::pair<int, std::string> request
     std::string text;
     std::vector<std::string> sections = split(request.second, ' ');
 
-    bool invalid = false;
     if (sections.size() == 3 && sections[0] == "get"){
       if (is_number(sections[2])){ // si es número
         text = sections[1];

@@ -41,7 +41,7 @@ int main(int argc, char const *argv[]) {
     cache_size = std::stoi(cache_str);
     std::cout << "Cache size set to "<< cache_size <<std::endl;
   } else {
-    std::cout << "No valid cache size option found. Please use -C <cache size> "<<cache_size<<std::endl;
+    std::cout << "No valid cache size option found. Please use -C <cache size> "<<std::endl;
     valid_parameters = false;
   }
 

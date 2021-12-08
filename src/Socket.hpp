@@ -24,6 +24,8 @@ public:
     // Getter funcionts
     int get_sock();
     struct sockaddr_in get_address();
+
+    virtual ~Socket() = default;
 };
 
 #endif
