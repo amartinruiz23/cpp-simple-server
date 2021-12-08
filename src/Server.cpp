@@ -29,8 +29,8 @@ std::pair<int,std::string> Server::accepter(){
     return std::make_pair(new_connection,"");
   }
 
-  output[bytes_received] = 0;
-  output.resize(bytes_received + 1);
+  //output[bytes_received] = 0;
+  output.resize(bytes_received - 1);
   //std::cout << output<<std::endl;
   return std::make_pair(new_connection, output);
 

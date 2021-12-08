@@ -31,7 +31,7 @@ void ServerThreadPool::processRequest(const std::pair<int, std::string> request)
     if (sections.size() == 3 && sections[0] == "get"){
       //std::cout<<"TAMAÑO 3"<<std::endl;
       //std::cout<<"ES GET"<<std::endl;
-      sections[2].resize(sections[2].size() - 2);
+      //sections[2].resize(sections[2].size());
       //std::cout << "SECTIONS[2] " << sections[2] << std::endl;
       //std::cout << "IS NUMBER " << is_number(sections[2]) << std::endl;
       //std::cout << "SIZE " << sections[2].size() << std::endl;
