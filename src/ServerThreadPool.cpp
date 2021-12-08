@@ -5,6 +5,7 @@ ServerThreadPool::ServerThreadPool(std::size_t cache_size):ThreadPool(),cache(ca
 ServerThreadPool::~ServerThreadPool(){
   //~ThreadPool();
   std::cout<<cache<<std::endl;
+  std::cout << "Bye!" <<std::endl;
 
 }
 
@@ -39,12 +40,15 @@ void ServerThreadPool::processRequest(const std::pair<int, std::string> request)
 
         if (cache.Exists(text)){
           //return Server::cache.Get(text);
-          send(request.first, cache.Get(text).c_str(), cache.Get(text).size(), 0);
+          std::string msg_hash = cache.Get(text);
+          msg_hash.insert(msg_hash.end(), '\n');
+          send(request.first, msg_hash.c_str(), msg_hash.size(), 0);
         } else {
           milisecs = std::stoi(sections[2]);
           std::this_thread::sleep_for(std::chrono::milliseconds(milisecs));
           std::string msg_hash = hash(text);
           cache.Put(text, msg_hash);
+          msg_hash.insert(msg_hash.end(), '\n');
           //std::cout << hash(text) << std::endl;
           send(request.first, msg_hash.c_str(), msg_hash.size(), 0);
         }

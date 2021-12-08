@@ -67,4 +67,5 @@ void Server::launch(){
 Server::~Server(){
   //close(socket->get_sock());
   delete socket;
+
 }

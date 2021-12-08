@@ -8,7 +8,6 @@ volatile sig_atomic_t flush = 0;
 void signal_handler(int signal) {
   if (signal == SIGTERM){
     finish = 1;
-    std::cout << "Bye!" <<std::endl;
   } else if (signal == SIGUSR1){
     flush = 1;
     std::cout << "Done!" <<std::endl;
@@ -56,7 +55,7 @@ int main(int argc, char const *argv[]) {
   //std::cout << c.Get("Hello") << c.Get("world") << std::endl;
 
   Server s(AF_INET, SOCK_STREAM, 0, port, INADDR_ANY, 10, cache_size);
-
+  
   return 0;
 }
 
@@ -73,10 +72,11 @@ int main(int argc, char const *argv[]) {
 //HECHO: TODO: GESTIÓN DE SEÑAL SIGTERM
 //HECHO: TODO: RECIBIR PUERTO Y TAMAÑO CACHE COMO ARGUMENTO AL EJECUTAR Y GESTIÓN DE ERROR DE ENTRADA
 //HECHO: TODO: SACAR FUNCIONES DE UTILIDAD DEL ARCHIVO SERVER
+// TODO: REFACTOR DE NOMBRES DE FUNCIONES
 // TODO: REVISAR POR QUÉ HAY DOS CARACTERES EXTRA EN EL NÚMERO
 // TODO: COMPROBAR QUÉ COSAS SE PUEDEN PONER COMO size_t
 // TODO: CERRAR SERVIDOR
 // TODO: REVISAR GESTIÓN DE ERRORES DE TODAS LAS CONEXIONES
+// TODO: COMPROBAR PASOS A MÉTODOS CON CONST &
 // TODO: DOXYGEN
 // TODO: MAKEFILE
-// TODO: COMPROBAR PASOS A MÉTODOS CON CONST &
