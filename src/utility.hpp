@@ -15,6 +15,6 @@ bool is_number(const std::string& s);
 
 std::string hash(std::string str);
 
-std::string get_cmd_option(int argc, char* argv[], const std::string& option);
+std::string get_cmd_option(int argc, const char* argv[], const std::string& option);
 
 #endif
