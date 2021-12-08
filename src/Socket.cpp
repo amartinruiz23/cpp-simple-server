@@ -15,7 +15,7 @@ Socket::Socket(int domain, int service, int protocol, int port, u_long interface
   address.sin_addr.s_addr = htonl(interface);
   address.sin_port = htons(port); // htons is necessary to convert a number to network byte order
 
-  // Stablish timeout time
+  // Stablish timeout time of 5 seconds
   struct timeval tv;
   tv.tv_sec = TIMEOUT_SECONDS;
   tv.tv_usec = 0;

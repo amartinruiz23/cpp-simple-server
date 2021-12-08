@@ -8,38 +8,40 @@
 #include <condition_variable> // std::condition_variable
 #include <vector>
 
+
+/*!
+Generic thread pool class. It does not implement the processing of the requests.
+*/
+
 class ThreadPool {
 
  public:
 
-   ThreadPool();
+  //! Thread pool constructor
+  ThreadPool();
 
+  //! Thread pool destructor
   ~ThreadPool();
 
+  //! Add work to the thread pool queue
   void queue_work(int fd, std::string& request);
 
  private:
-  // This condition variable is used for the threads to wait until there is work
-  // to do
+
+   // Conditional variable used for the threads to wait until there is work to do
   std::condition_variable_any work_queue_condition_variable;
 
-  // We store the threads in a vector, so we can later stop them gracefully
-  std::vector<std::thread> threads;
+  std::vector<std::thread> threads; // Vector for the threads to be stored
 
-  // Mutex to protect workQueue
-  std::mutex work_queue_mutex;
+  std::mutex work_queue_mutex; // Mutex to protect work queue
 
-  // Queue of requests waiting to be processed
-  std::queue<std::pair<int, std::string>> work_queue;
+  std::queue<std::pair<int, std::string>> work_queue; // Queue of requests waiting to be processed
 
-  // This will be set to true when the thread pool is shutting down. This tells
-  // the threads to stop looping and finish
-  bool done;
+  bool done; // True when the thread pool is shutting done and the threads must join
 
-  // Function used by the threads to grab work from the queue
-  void do_work();
+  void do_work(); // Functions for the threads to grab work from the queue
 
-  virtual void process_request(const std::pair<int, std::string>) = 0;
+  virtual void process_request(const std::pair<int, std::string>) = 0; // Not implemented request processing
 
 };
 
