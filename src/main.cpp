@@ -27,27 +27,30 @@ int main(int argc, char const *argv[]) {
   int port;
   int cache_size;
 
+  bool valid_parameters = true;
+
   if(is_number(port_str)){
     port = std::stoi(port_str);
     std::cout << "Port set to "<< port <<std::endl;
   } else {
-    port = 9999;
-    std::cout << "No valid port option found. By default, port set to "<<port<<std::endl;
+    std::cout << "No valid port option found. Please use -p <port number> "<<std::endl;
+    valid_parameters = false;
   }
 
   if(is_number(cache_str)){
     cache_size = std::stoi(cache_str);
     std::cout << "Cache size set to "<< cache_size <<std::endl;
   } else {
-    cache_size = 5;
-    std::cout << "No valid cache size option found. By default, cache size set to "<<cache_size<<std::endl;
+    std::cout << "No valid cache size option found. Please use -C <cache size> "<<cache_size<<std::endl;
+    valid_parameters = false;
   }
 
-  std::signal(SIGTERM, signal_handler);
-  std::signal(SIGUSR1, signal_handler);
+  if (valid_parameters){
+    std::signal(SIGTERM, signal_handler);
+    std::signal(SIGUSR1, signal_handler);
 
-  Server s(AF_INET, SOCK_STREAM, 0, port, INADDR_ANY, 10, cache_size);
-
+    Server s(AF_INET, SOCK_STREAM, 0, port, INADDR_ANY, 10, cache_size);
+  }
   return 0;
 }
 
@@ -69,6 +72,6 @@ int main(int argc, char const *argv[]) {
 //HECHO: TODO: REFACTOR DE NOMBRES DE FUNCIONES
 //HECHO: TODO: REVISAR GESTIÓN DE ERRORES DE TODAS LAS CONEXIONES
 //HECHO: TODO: COMPROBAR PASOS A MÉTODOS CON CONST &
-//TODO: BORRAR COMENTARIOS INNECESARIOS
+//HECHO: TODO: BORRAR COMENTARIOS INNECESARIOS
 // TODO: DOXYGEN
 // TODO: MAKEFILE

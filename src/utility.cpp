@@ -29,15 +29,15 @@ std::string hash(std::string str){
 }
 
 std::string get_cmd_option(int argc, const char* argv[], const std::string& option){
-    std::string cmd = "";
-     for( int i = 0; i < argc; ++i)
-     {
-          std::string arg = argv[i];
-          if(0 == arg.find(option))
-          {
-               cmd = argv[i + 1];
-               return cmd;
-          }
-     }
-     return cmd;
+  std::string cmd = "";
+  for( int i = 0; i < argc; ++i){
+    std::string arg = argv[i];
+    if(0 == arg.find(option)){
+      if(i < argc -1){
+        cmd = argv[i + 1];
+      }
+      return cmd;
+    }
+  }
+  return cmd;
 }
