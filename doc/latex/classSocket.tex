@@ -1,0 +1,93 @@
+\hypertarget{classSocket}{}\section{Socket Class Reference}
+\label{classSocket}\index{Socket@{Socket}}
+
+
+{\ttfamily \#include $<$Socket.\+hpp$>$}
+
+
+
+Inheritance diagram for Socket\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classSocket__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSocket_a8be4869e74ddaa7ca8b2a0002fe3ac8e}{Socket} (int domain, int service, int protocol, int port, u\+\_\+long interface)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSocket}{Socket} constructor. For more information, check \href{https://man7.org/linux/man-pages/man2/socket.2.html}{\tt https\+://man7.\+org/linux/man-\/pages/man2/socket.\+2.\+html}. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classSocket_a2483ca0900b0d55cfeb4b6cf5724c1e7}{connect\+\_\+to\+\_\+network} (int sock, struct sockaddr\+\_\+in address)=0
+\begin{DoxyCompactList}\small\item\em Virtual connection function. Must be implemented as bind (server) or connect (client). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSocket_a2a3fd953636d01a796d8b648c785d625}\label{classSocket_a2a3fd953636d01a796d8b648c785d625}} 
+void \hyperlink{classSocket_a2a3fd953636d01a796d8b648c785d625}{test\+\_\+sock} ()
+\begin{DoxyCompactList}\small\item\em Test function for the socket. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSocket_a134a2436c9fff81048d7815eca284232}\label{classSocket_a134a2436c9fff81048d7815eca284232}} 
+int \hyperlink{classSocket_a134a2436c9fff81048d7815eca284232}{get\+\_\+sock} ()
+\begin{DoxyCompactList}\small\item\em Getter function for the socket file descriptor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSocket_a6a36bc269e33e3ffda2c224a9b8bf961}\label{classSocket_a6a36bc269e33e3ffda2c224a9b8bf961}} 
+struct sockaddr\+\_\+in \hyperlink{classSocket_a6a36bc269e33e3ffda2c224a9b8bf961}{get\+\_\+address} ()
+\begin{DoxyCompactList}\small\item\em Getter function for the address struct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSocket_a073b4b728d8b6e366db9caa37a59dbbb}\label{classSocket_a073b4b728d8b6e366db9caa37a59dbbb}} 
+virtual \hyperlink{classSocket_a073b4b728d8b6e366db9caa37a59dbbb}{$\sim$\+Socket} ()=default
+\begin{DoxyCompactList}\small\item\em V\+Irtual default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic socket class. It does not implement the connection process, as it is different in the server side and in the client side. In this project only the first one will be implemented, but a socket for the client side could also inherit from this class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSocket_a8be4869e74ddaa7ca8b2a0002fe3ac8e}\label{classSocket_a8be4869e74ddaa7ca8b2a0002fe3ac8e}} 
+\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\subsubsection{\texorpdfstring{Socket()}{Socket()}}
+{\footnotesize\ttfamily Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{int}]{domain,  }\item[{int}]{service,  }\item[{int}]{protocol,  }\item[{int}]{port,  }\item[{u\+\_\+long}]{interface }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classSocket}{Socket} constructor. For more information, check \href{https://man7.org/linux/man-pages/man2/socket.2.html}{\tt https\+://man7.\+org/linux/man-\/pages/man2/socket.\+2.\+html}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & specifies the communicantion domain \\
+\hline
+{\em service} & specifies the communication semantics \\
+\hline
+{\em protocol} & specifies a particular protocol to be used with the socket \\
+\hline
+{\em port} & specifies the number of port that will be used \\
+\hline
+{\em interface} & specifies port interface \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSocket_a2483ca0900b0d55cfeb4b6cf5724c1e7}\label{classSocket_a2483ca0900b0d55cfeb4b6cf5724c1e7}} 
+\index{Socket@{Socket}!connect\+\_\+to\+\_\+network@{connect\+\_\+to\+\_\+network}}
+\index{connect\+\_\+to\+\_\+network@{connect\+\_\+to\+\_\+network}!Socket@{Socket}}
+\subsubsection{\texorpdfstring{connect\+\_\+to\+\_\+network()}{connect\_to\_network()}}
+{\footnotesize\ttfamily virtual int Socket\+::connect\+\_\+to\+\_\+network (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{struct sockaddr\+\_\+in}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual connection function. Must be implemented as bind (server) or connect (client). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sock} & specifies the socket file descriptor for the connection \\
+\hline
+{\em service} & address specifies the adress struct for the connection \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classBindingSocket_a02a8a46a6a5d5c3205d53f2a9840455a}{Binding\+Socket}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Socket.\+hpp\item 
+Socket.\+cpp\end{DoxyCompactItemize}

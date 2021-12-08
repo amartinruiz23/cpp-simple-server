@@ -1,0 +1,107 @@
+\hypertarget{classBindingSocket}{}\section{Binding\+Socket Class Reference}
+\label{classBindingSocket}\index{Binding\+Socket@{Binding\+Socket}}
+
+
+{\ttfamily \#include $<$Binding\+Socket.\+hpp$>$}
+
+
+
+Inheritance diagram for Binding\+Socket\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classBindingSocket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Binding\+Socket\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classBindingSocket__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBindingSocket_aee27b67c01411fa363865e92310b015c}{Binding\+Socket} (int domain, int service, int protocol, int port, u\+\_\+long interface, int bklg)
+\begin{DoxyCompactList}\small\item\em Binding (server side) socket constructor. For more information, check \href{https://man7.org/linux/man-pages/man2/socket.2.html}{\tt https\+://man7.\+org/linux/man-\/pages/man2/socket.\+2.\+html}. \end{DoxyCompactList}\item 
+int \hyperlink{classBindingSocket_a02a8a46a6a5d5c3205d53f2a9840455a}{connect\+\_\+to\+\_\+network} (int sock, struct sockaddr\+\_\+in address)
+\begin{DoxyCompactList}\small\item\em Implements the connection to the network using the bind function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBindingSocket_add8fecb2aa76c3c81bb65861973c487a}\label{classBindingSocket_add8fecb2aa76c3c81bb65861973c487a}} 
+void \hyperlink{classBindingSocket_add8fecb2aa76c3c81bb65861973c487a}{start\+\_\+listening} ()
+\begin{DoxyCompactList}\small\item\em Function to be called to start listening to the previously specified port. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBindingSocket_a76086880c62746d2247befee6a3fe68f}\label{classBindingSocket_a76086880c62746d2247befee6a3fe68f}} 
+void \hyperlink{classBindingSocket_a76086880c62746d2247befee6a3fe68f}{test\+\_\+connection} ()
+\begin{DoxyCompactList}\small\item\em Test function for the connection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBindingSocket_aa24ab4e79fd3b30b415b3e96eae14a83}\label{classBindingSocket_aa24ab4e79fd3b30b415b3e96eae14a83}} 
+void \hyperlink{classBindingSocket_aa24ab4e79fd3b30b415b3e96eae14a83}{test\+\_\+listening} ()
+\begin{DoxyCompactList}\small\item\em Test function for the port listening. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBindingSocket_acaf64a54e51eea07f5f7268b805ab3d0}\label{classBindingSocket_acaf64a54e51eea07f5f7268b805ab3d0}} 
+int \hyperlink{classBindingSocket_acaf64a54e51eea07f5f7268b805ab3d0}{get\+\_\+connection} ()
+\begin{DoxyCompactList}\small\item\em Getter for the connection binding, 0 on success, -\/1 on failure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBindingSocket_a562609b198ba3db277549ae4d465d1c2}\label{classBindingSocket_a562609b198ba3db277549ae4d465d1c2}} 
+int \hyperlink{classBindingSocket_a562609b198ba3db277549ae4d465d1c2}{get\+\_\+listening} ()
+\begin{DoxyCompactList}\small\item\em Getter for the listening, 0 on success, -\/1 on failure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Binding socket class. It inherits from the generic socket and implements the binding process, used in the server side. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBindingSocket_aee27b67c01411fa363865e92310b015c}\label{classBindingSocket_aee27b67c01411fa363865e92310b015c}} 
+\index{Binding\+Socket@{Binding\+Socket}!Binding\+Socket@{Binding\+Socket}}
+\index{Binding\+Socket@{Binding\+Socket}!Binding\+Socket@{Binding\+Socket}}
+\subsubsection{\texorpdfstring{Binding\+Socket()}{BindingSocket()}}
+{\footnotesize\ttfamily Binding\+Socket\+::\+Binding\+Socket (\begin{DoxyParamCaption}\item[{int}]{domain,  }\item[{int}]{service,  }\item[{int}]{protocol,  }\item[{int}]{port,  }\item[{u\+\_\+long}]{interface,  }\item[{int}]{bklg }\end{DoxyParamCaption})}
+
+
+
+Binding (server side) socket constructor. For more information, check \href{https://man7.org/linux/man-pages/man2/socket.2.html}{\tt https\+://man7.\+org/linux/man-\/pages/man2/socket.\+2.\+html}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & specifies the communicantion domain \\
+\hline
+{\em service} & specifies the communication semantics \\
+\hline
+{\em protocol} & specifies a particular protocol to be used with the socket \\
+\hline
+{\em port} & specifies the number of port that will be used \\
+\hline
+{\em interface} & specifies port interface \\
+\hline
+{\em bklg} & defines the maximum length to which the queue of pending connections may grow \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBindingSocket_a02a8a46a6a5d5c3205d53f2a9840455a}\label{classBindingSocket_a02a8a46a6a5d5c3205d53f2a9840455a}} 
+\index{Binding\+Socket@{Binding\+Socket}!connect\+\_\+to\+\_\+network@{connect\+\_\+to\+\_\+network}}
+\index{connect\+\_\+to\+\_\+network@{connect\+\_\+to\+\_\+network}!Binding\+Socket@{Binding\+Socket}}
+\subsubsection{\texorpdfstring{connect\+\_\+to\+\_\+network()}{connect\_to\_network()}}
+{\footnotesize\ttfamily int Binding\+Socket\+::connect\+\_\+to\+\_\+network (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{struct sockaddr\+\_\+in}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements the connection to the network using the bind function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sock} & specifies the socket file descriptor for the connection \\
+\hline
+{\em service} & address specifies the adress struct for the connection \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSocket_a2483ca0900b0d55cfeb4b6cf5724c1e7}{Socket}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Binding\+Socket.\+hpp\item 
+Binding\+Socket.\+cpp\end{DoxyCompactItemize}

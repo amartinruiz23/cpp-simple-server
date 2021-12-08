@@ -1,0 +1,36 @@
+\hypertarget{classThreadPool}{}\section{Thread\+Pool Class Reference}
+\label{classThreadPool}\index{Thread\+Pool@{Thread\+Pool}}
+
+
+{\ttfamily \#include $<$Thread\+Pool.\+hpp$>$}
+
+
+
+Inheritance diagram for Thread\+Pool\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classThreadPool__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classThreadPool_a3225e86aa7835545b3f6c2c8d363d5e5}\label{classThreadPool_a3225e86aa7835545b3f6c2c8d363d5e5}} 
+\hyperlink{classThreadPool_a3225e86aa7835545b3f6c2c8d363d5e5}{Thread\+Pool} ()
+\begin{DoxyCompactList}\small\item\em Thread pool constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classThreadPool_a44d3d2ab618970605e684efc216655eb}\label{classThreadPool_a44d3d2ab618970605e684efc216655eb}} 
+\hyperlink{classThreadPool_a44d3d2ab618970605e684efc216655eb}{$\sim$\+Thread\+Pool} ()
+\begin{DoxyCompactList}\small\item\em Thread pool destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classThreadPool_a152a5b1a5ed2274fff48fd03415a4c11}\label{classThreadPool_a152a5b1a5ed2274fff48fd03415a4c11}} 
+void \hyperlink{classThreadPool_a152a5b1a5ed2274fff48fd03415a4c11}{queue\+\_\+work} (int fd, std\+::string \&request)
+\begin{DoxyCompactList}\small\item\em Add work to the thread pool queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic thread pool class. It does not implement the processing of the requests. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Thread\+Pool.\+hpp\item 
+Thread\+Pool.\+cpp\end{DoxyCompactItemize}

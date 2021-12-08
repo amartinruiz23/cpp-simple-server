@@ -1,0 +1,65 @@
+\hypertarget{classServerThreadPool}{}\section{Server\+Thread\+Pool Class Reference}
+\label{classServerThreadPool}\index{Server\+Thread\+Pool@{Server\+Thread\+Pool}}
+
+
+{\ttfamily \#include $<$Server\+Thread\+Pool.\+hpp$>$}
+
+
+
+Inheritance diagram for Server\+Thread\+Pool\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classServerThreadPool__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+Thread\+Pool\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classServerThreadPool__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classServerThreadPool_a2da6753b0170d337851425975763bbf9}{Server\+Thread\+Pool} (std\+::size\+\_\+t cache\+\_\+size)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classServer}{Server} thread pool constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerThreadPool_a45205b1fb0646e472e3dbb8bd7a6a9e9}\label{classServerThreadPool_a45205b1fb0646e472e3dbb8bd7a6a9e9}} 
+\hyperlink{classServerThreadPool_a45205b1fb0646e472e3dbb8bd7a6a9e9}{$\sim$\+Server\+Thread\+Pool} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classServer}{Server} thread pool constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerThreadPool_a93e08ed8efb10e755235f6d480f3a37c}\label{classServerThreadPool_a93e08ed8efb10e755235f6d480f3a37c}} 
+void \hyperlink{classServerThreadPool_a93e08ed8efb10e755235f6d480f3a37c}{process\+\_\+request} (const std\+::pair$<$ int, std\+::string $>$ request)
+\begin{DoxyCompactList}\small\item\em Process requests, returning the M\+D5 hash of the text and sleeping the specified time if the request is valid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerThreadPool_ad41b2e8022a99e2479020708f50aea39}\label{classServerThreadPool_ad41b2e8022a99e2479020708f50aea39}} 
+void \hyperlink{classServerThreadPool_ad41b2e8022a99e2479020708f50aea39}{cache\+\_\+clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the cache. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Thread pool class for the implemented server. It does implement the processing of petitions and includes the cache. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServerThreadPool_a2da6753b0170d337851425975763bbf9}\label{classServerThreadPool_a2da6753b0170d337851425975763bbf9}} 
+\index{Server\+Thread\+Pool@{Server\+Thread\+Pool}!Server\+Thread\+Pool@{Server\+Thread\+Pool}}
+\index{Server\+Thread\+Pool@{Server\+Thread\+Pool}!Server\+Thread\+Pool@{Server\+Thread\+Pool}}
+\subsubsection{\texorpdfstring{Server\+Thread\+Pool()}{ServerThreadPool()}}
+{\footnotesize\ttfamily Server\+Thread\+Pool\+::\+Server\+Thread\+Pool (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{cache\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classServer}{Server} thread pool constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache\+\_\+size} & specifies the maximum size of the cache. If 0, the cache size will be the maximum posible. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server\+Thread\+Pool.\+hpp\item 
+Server\+Thread\+Pool.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,124 @@
+\hypertarget{classCache}{}\section{Cache$<$ Key, Value $>$ Class Template Reference}
+\label{classCache}\index{Cache$<$ Key, Value $>$@{Cache$<$ Key, Value $>$}}
+
+
+{\ttfamily \#include $<$Cache.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCache_aba9c0839c657c50ce9147b298278dab9}\label{classCache_aba9c0839c657c50ce9147b298278dab9}} 
+using {\bfseries value\+\_\+type} = typename std\+::pair$<$ Key, Value $>$
+\item 
+\mbox{\Hypertarget{classCache_ae0ecf3d225e5d7ee2b9fbf048727609b}\label{classCache_ae0ecf3d225e5d7ee2b9fbf048727609b}} 
+using {\bfseries value\+\_\+it} = typename std\+::list$<$ value\+\_\+type $>$\+::iterator
+\item 
+\mbox{\Hypertarget{classCache_a6af783ab93cfb837dde67795cd99a017}\label{classCache_a6af783ab93cfb837dde67795cd99a017}} 
+using {\bfseries operation\+\_\+guard} = typename std\+::lock\+\_\+guard$<$ std\+::mutex $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCache_aff01185fbb5b12ac5e139444e092b471}{Cache} (size\+\_\+t max\+\_\+size)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCache}{Cache} constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classCache_a7b54629fb513d4b1652951bb713a0635}{put} (const Key \&key, const Value \&value)
+\begin{DoxyCompactList}\small\item\em Puts a key and its value in the cache. \end{DoxyCompactList}\item 
+Value \& \hyperlink{classCache_ae2c5a764bec9cf7bcc455d37377ff477}{get} (const Key \&key)
+\begin{DoxyCompactList}\small\item\em Queries a value from the cache. \end{DoxyCompactList}\item 
+bool \hyperlink{classCache_a3cbee30a98148ba6e15e28e4e096d995}{exists} (const Key \&key)
+\begin{DoxyCompactList}\small\item\em Queries if a value is in the cache. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCache_a6b13a48d9bc1217c9408e66543655e67}\label{classCache_a6b13a48d9bc1217c9408e66543655e67}} 
+size\+\_\+t \hyperlink{classCache_a6b13a48d9bc1217c9408e66543655e67}{Size} ()
+\begin{DoxyCompactList}\small\item\em Queries the current size of the cache. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCache_addfc9aa7e42dcac6ab1ba103a75cdc66}\label{classCache_addfc9aa7e42dcac6ab1ba103a75cdc66}} 
+void \hyperlink{classCache_addfc9aa7e42dcac6ab1ba103a75cdc66}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the cache. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCache_a11049cc49065d8bad3f6154e155922f1}\label{classCache_a11049cc49065d8bad3f6154e155922f1}} 
+std\+::ostream \& \hyperlink{classCache_a11049cc49065d8bad3f6154e155922f1}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classCache}{Cache} \&c)
+\begin{DoxyCompactList}\small\item\em Output operator. Writes the cache content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Key, typename Value$>$\newline
+class Cache$<$ Key, Value $>$}
+
+Least recently used class. A template class to be used with any types. For more information check \href{https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Cache\+\_\+replacement\+\_\+policies\#\+Least\+\_\+recently\+\_\+used\+\_\+(\+L\+R\+U)} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCache_aff01185fbb5b12ac5e139444e092b471}\label{classCache_aff01185fbb5b12ac5e139444e092b471}} 
+\index{Cache@{Cache}!Cache@{Cache}}
+\index{Cache@{Cache}!Cache@{Cache}}
+\subsubsection{\texorpdfstring{Cache()}{Cache()}}
+{\footnotesize\ttfamily template$<$typename Key, typename Value$>$ \\
+\hyperlink{classCache}{Cache}$<$ Key, Value $>$\+::\hyperlink{classCache}{Cache} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\hyperlink{classCache}{Cache} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+size} & specifies the maximum size of the cache. If 0, the cache size will be the maximum posible. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCache_a3cbee30a98148ba6e15e28e4e096d995}\label{classCache_a3cbee30a98148ba6e15e28e4e096d995}} 
+\index{Cache@{Cache}!exists@{exists}}
+\index{exists@{exists}!Cache@{Cache}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily template$<$typename Key, typename Value$>$ \\
+bool \hyperlink{classCache}{Cache}$<$ Key, Value $>$\+::exists (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Queries if a value is in the cache. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & specifies the key to be queried \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCache_ae2c5a764bec9cf7bcc455d37377ff477}\label{classCache_ae2c5a764bec9cf7bcc455d37377ff477}} 
+\index{Cache@{Cache}!get@{get}}
+\index{get@{get}!Cache@{Cache}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename Key, typename Value$>$ \\
+Value\& \hyperlink{classCache}{Cache}$<$ Key, Value $>$\+::get (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Queries a value from the cache. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & specifies the key to be queried \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCache_a7b54629fb513d4b1652951bb713a0635}\label{classCache_a7b54629fb513d4b1652951bb713a0635}} 
+\index{Cache@{Cache}!put@{put}}
+\index{put@{put}!Cache@{Cache}}
+\subsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily template$<$typename Key, typename Value$>$ \\
+void \hyperlink{classCache}{Cache}$<$ Key, Value $>$\+::put (\begin{DoxyParamCaption}\item[{const Key \&}]{key,  }\item[{const Value \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Puts a key and its value in the cache. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & specifies the key to be inserted \\
+\hline
+{\em value} & specifies the value to be inserted \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Cache.\+hpp\end{DoxyCompactItemize}

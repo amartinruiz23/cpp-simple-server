@@ -1,0 +1,59 @@
+\hypertarget{classServer}{}\section{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+{\ttfamily \#include $<$Server.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classServer_abc46ac7076bfd95da8b3b3bf73e687f7}{Server} (int domain, int service, int protocol, int port, u\+\_\+long interface, int bklg, std\+::size\+\_\+t cache\+\_\+size)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classServer}{Server} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}} 
+\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{$\sim$\+Server} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classServer}{Server} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServer_ae57da46723e205970eb7acde627edb19}\label{classServer_ae57da46723e205970eb7acde627edb19}} 
+class {\bfseries Server\+Thread\+Pool}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classServer}{Server} class that manages the connection to the socket and the tasks received 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_abc46ac7076bfd95da8b3b3bf73e687f7}\label{classServer_abc46ac7076bfd95da8b3b3bf73e687f7}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\subsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{int}]{domain,  }\item[{int}]{service,  }\item[{int}]{protocol,  }\item[{int}]{port,  }\item[{u\+\_\+long}]{interface,  }\item[{int}]{bklg,  }\item[{std\+::size\+\_\+t}]{cache\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classServer}{Server} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & specifies the communicantion domain for the socket \\
+\hline
+{\em service} & specifies the communication semantics for the socket \\
+\hline
+{\em protocol} & specifies a particular protocol to be used with the socket \\
+\hline
+{\em port} & specifies the number of port that will be used for the socket \\
+\hline
+{\em interface} & specifies port interface for the socket \\
+\hline
+{\em bklg} & defines the maximum length to which the queue of pending connections may grow in the socket \\
+\hline
+{\em cache\+\_\+size} & defines the size of the cache \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server.\+hpp\item 
+Server.\+cpp\end{DoxyCompactItemize}
