@@ -10,11 +10,12 @@ Socket::Socket(int domain, int service, int protocol, int port, u_long interface
   sock = socket(domain, service, protocol);
   test_sock();
 
-  // Address structure
+  // Stablish address structure
   address.sin_family = domain;
   address.sin_addr.s_addr = htonl(interface);
   address.sin_port = htons(port); // htons is necessary to convert a number to network byte order
 
+  // Stablish timeout time
   struct timeval tv;
   tv.tv_sec = TIMEOUT_SECONDS;
   tv.tv_usec = 0;

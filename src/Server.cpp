@@ -3,7 +3,6 @@
 extern sig_atomic_t finish;
 extern sig_atomic_t flush;
 
-
 Server::Server(int domain, int service, int protocol, int port,
   u_long interface, int bklg, std::size_t cache_size):tp(cache_size){
 

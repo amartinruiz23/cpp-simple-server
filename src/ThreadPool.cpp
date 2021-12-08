@@ -4,12 +4,15 @@ ThreadPool::ThreadPool() : done(false) {
   // This returns the number of threads supported by the system. If the
   // function can't figure out this information, it returns 0. 0 is not good,
   // so we create at least 1
-  auto numberOfThreads = std::thread::hardware_concurrency();
-  if (numberOfThreads == 0) {
-    numberOfThreads = 1;
+
+  // Set the number of threads to the number supported by the system. If 0,
+  // create at least 1.
+  auto number_of_threads = std::thread::hardware_concurrency();
+  if (number_of_threads == 0) {
+    number_of_threads = 1;
   }
 
-  for (unsigned i = 0; i < numberOfThreads; ++i) {
+  for (unsigned i = 0; i < number_of_threads; ++i) {
     // The threads will execute the private member `doWork`. Note that we need
     // to pass a reference to the function (namespaced with the class name) as
     // the first argument, and the current object as second argument
