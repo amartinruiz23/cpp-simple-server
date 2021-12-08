@@ -1,12 +1,10 @@
 #include <unistd.h>
 #include <chrono>
-#include <openssl/md5.h>
-#include <sstream>
-#include <iomanip>
 #include <sys/socket.h>
 
 #include "ThreadPool.hpp"
 #include "Cache.hpp"
+#include "utility.hpp"
 
 //const std::size_t CACHE_SIZE = 10;
 

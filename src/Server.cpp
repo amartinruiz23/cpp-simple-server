@@ -43,15 +43,15 @@ std::pair<int,std::string> Server::accepter(){
 //}
 
 void Server::launch(){
-  int i = 5;
+  //int i = 5;
 
   while(!finish){
     if(flush){
       tp.cacheClear();
       flush = 0;
     }
-    std::cout<<"server finish: "<<finish<<std::endl;
-    i--;
+    //std::cout<<"server finish: "<<finish<<std::endl;
+    //i--;
     //std::cout<<"-------"<<std::endl;
     std::pair<int, std::string> request = accepter();
     tp.queueWork(request.first, request.second);
