@@ -6,6 +6,11 @@
 #include <cstdlib> // For exit() and EXIT_FAILURE
 #include <iostream>
 
+/*!
+Generic socket class. It does not implement the connection process, as it is different
+in the server side and in the client side. In this proyect only the first one will be
+implemented, but a socket for the client side could also inherit from this class.
+*/
 class Socket{
 
   int sock;

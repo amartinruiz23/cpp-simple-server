@@ -3,6 +3,10 @@
 
 #include "Socket.hpp"
 
+/*!
+Binding socket class. It inherits from the generic socket and implements the binding
+process, used in the server side.
+*/
 class BindingSocket: public Socket{
 
   int connection;
