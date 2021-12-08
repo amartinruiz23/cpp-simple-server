@@ -1,5 +1,3 @@
-# g++ -std=c++11 main.cpp BindingSocket.cpp Socket.cpp Cache.hpp ThreadPool.cpp ServerThreadPool.cpp utility.cpp Server.cpp -o prueba -lssl -lcrypto -lpthread -Wall
-
 CC = g++
 CXXFLAGS = -std=c++11 -pedantic -Wall
 LIBFLAGS = -lssl -lcrypto -lpthread
