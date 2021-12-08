@@ -8,6 +8,7 @@
 
 const int BUFFER_SIZE = 30000;
 
+//! Brief description, can span only 1 line
 class Server{
 
   friend class ServerThreadPool;
