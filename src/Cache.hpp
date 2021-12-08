@@ -13,7 +13,7 @@
 template <typename Key, typename Value>
 
 /*!
-Least recently used class. A template class to be used with any types. For more information check https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)
+Least recently used cache class. A template class to be used with any types. For more information check https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)
 */
 class Cache {
 
