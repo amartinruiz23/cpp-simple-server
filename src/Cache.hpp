@@ -1,3 +1,6 @@
+#ifndef CACHE_H
+#define CACHE_H
+
 #include <cstddef>
 #include <list>
 #include <mutex>
@@ -81,10 +84,8 @@ class Cache {
   }
 
   friend std::ostream& operator<<(std::ostream& os, const Cache& c){
-    //operation_guard og{safe_op};
 
     for (auto it = c.cache_items_list.begin(); it != c.cache_items_list.end(); ++it){
-      //std::cout << "AAA"<<std::endl;
       os << "(" << it->first <<", "<< it->second << ")\n";
     }
     return os;
@@ -97,3 +98,5 @@ private:
   std::mutex safe_op;
 
 };
+
+#endif

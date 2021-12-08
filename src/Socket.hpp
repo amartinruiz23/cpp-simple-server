@@ -1,3 +1,6 @@
+#ifndef SOCKET_H
+#define SOCKET_H
+
 #include <sys/socket.h> // For socket functions
 #include <netinet/in.h> // For sockaddr_in
 #include <cstdlib> // For exit() and EXIT_FAILURE
@@ -22,3 +25,5 @@ public:
     int get_sock();
     struct sockaddr_in get_address();
 };
+
+#endif

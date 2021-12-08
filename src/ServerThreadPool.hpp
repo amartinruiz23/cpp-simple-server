@@ -1,3 +1,6 @@
+#ifndef SERVER_THREAD_POOL_H
+#define SERVER_THREAD_POOL_H
+
 #include <unistd.h>
 #include <chrono>
 #include <sys/socket.h>
@@ -6,13 +9,11 @@
 #include "Cache.hpp"
 #include "utility.hpp"
 
-//const std::size_t CACHE_SIZE = 10;
-
 class ServerThreadPool: public ThreadPool{
 public:
 
   ServerThreadPool(std::size_t cache_size);
-  ~ServerThreadPool(); //TODO: ¿No necesario?
+  ~ServerThreadPool();
 
   void process_request(const std::pair<int, std::string> request);
   void cache_clear();
@@ -20,3 +21,5 @@ public:
 private:
   Cache<std::string, std::string> cache;
 };
+
+#endif

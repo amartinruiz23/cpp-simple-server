@@ -22,8 +22,6 @@ int main(int argc, char const *argv[]) {
   std::string cache_str = get_cmd_option(argc, argv, CACHE_SIZE_OPTION);
   std::string port_str = get_cmd_option(argc, argv, PORT_OPTION);
 
-  //std::cout <<"CACHE SIZE: "<<cache_str<< " IS NUMBER: "<<is_number(cache_str)<<std::endl;
-  //std::cout <<"PORT NUMBER: "<<port_str<< " IS NUMBER: "<<is_number(port_str)<<std::endl;
   std::cout << "Meteologica server. PID: "<< getpid()<<std::endl;
 
   int port;
@@ -48,12 +46,6 @@ int main(int argc, char const *argv[]) {
   std::signal(SIGTERM, signal_handler);
   std::signal(SIGUSR1, signal_handler);
 
-  //std::size_t size = 3;
-  //Cache<std::string, int> c(size);
-  //c.Put("Hello", 1);
-  //c.Put("world", 2);
-  //std::cout << c.Get("Hello") << c.Get("world") << std::endl;
-
   Server s(AF_INET, SOCK_STREAM, 0, port, INADDR_ANY, 10, cache_size);
 
   return 0;
@@ -74,8 +66,9 @@ int main(int argc, char const *argv[]) {
 //HECHO: TODO: SACAR FUNCIONES DE UTILIDAD DEL ARCHIVO SERVER
 //HECHO: TODO: REVISAR POR QUÉ HAY DOS CARACTERES EXTRA EN EL NÚMERO
 //HECHO: TODO: CERRAR SERVIDOR
-// TODO: REFACTOR DE NOMBRES DE FUNCIONES
-// TODO: REVISAR GESTIÓN DE ERRORES DE TODAS LAS CONEXIONES
-// TODO: COMPROBAR PASOS A MÉTODOS CON CONST &
+//HECHO: TODO: REFACTOR DE NOMBRES DE FUNCIONES
+//HECHO: TODO: REVISAR GESTIÓN DE ERRORES DE TODAS LAS CONEXIONES
+//HECHO: TODO: COMPROBAR PASOS A MÉTODOS CON CONST &
+//TODO: BORRAR COMENTARIOS INNECESARIOS
 // TODO: DOXYGEN
 // TODO: MAKEFILE

@@ -36,11 +36,6 @@ std::pair<int,std::string> Server::accepter(){
 
 }
 
-//std::string Server::handdler(std::string msg){
-//}
-
-//void Server::responder(std::string msg){
-//}
 
 void Server::launch(){
   //int i = 5;
@@ -50,22 +45,13 @@ void Server::launch(){
       tp.cache_clear();
       flush = 0;
     }
-    //std::cout<<"server finish: "<<finish<<std::endl;
-    //i--;
-    //std::cout<<"-------"<<std::endl;
     std::pair<int, std::string> request = accepter();
     tp.queue_work(request.first, request.second);
-    //if (i == 2){
-      //std::cout<<cache<<std::endl;
-      //cache.clear();
-    //}
-    //std::cout<<"-------"<<std::endl;
   }
+
   close(socket->get_sock());
 }
 
 Server::~Server(){
-  //close(socket->get_sock());
   delete socket;
-
 }

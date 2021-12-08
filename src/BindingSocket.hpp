@@ -1,3 +1,6 @@
+#ifndef BINDING_SOCKET_H
+#define BINDING_SOCKET_H
+
 #include "Socket.hpp"
 
 class BindingSocket: public Socket{
@@ -25,3 +28,5 @@ public:
   int get_listening();
 
 };
+
+#endif

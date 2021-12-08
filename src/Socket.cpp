@@ -12,7 +12,7 @@ Socket::Socket(int domain, int service, int protocol, int port, u_long interface
 
   // Address structure
   address.sin_family = domain;
-  address.sin_addr.s_addr = htonl(interface); //htonl necesario????
+  address.sin_addr.s_addr = htonl(interface);
   address.sin_port = htons(port); // htons is necessary to convert a number to network byte order
 
   struct timeval tv;

@@ -1,3 +1,6 @@
+#ifndef THREAD_POOL_H
+#define THREAD_POOL_H
+
 #include <thread> // std::thread
 #include <vector> // std::vector
 #include <queue> // std::queue
@@ -39,3 +42,5 @@ class ThreadPool {
   virtual void process_request(const std::pair<int, std::string>) = 0;
 
 };
+
+#endif
