@@ -65,6 +65,7 @@ class Cache {
   //! Queries a value from the cache
   /*!
   \param key specifies the key to be queried
+  \return pointer to the value of error
   */
   Value& get(const Key& key) {
     operation_guard og{safe_op}; // Take the mutex
@@ -84,6 +85,7 @@ class Cache {
   //! Queries if a value is in the cache
   /*!
   \param key specifies the key to be queried
+  \return true in the value exists in the cache, false if it does not
   */
   bool exists(const Key& key) {
     operation_guard og{safe_op}; // Take the mutex
@@ -92,6 +94,9 @@ class Cache {
   }
 
   //! Queries the current size of the cache
+  /*!
+  \return size of the cache
+  */
   size_t Size() {
     operation_guard og{safe_op}; // Take the mutex
 
@@ -107,6 +112,9 @@ class Cache {
   }
 
   //! Output operator. Writes the cache content
+  /*!
+  \return pointer to the stream
+  */
   friend std::ostream& operator<<(std::ostream& os, const Cache& c){
 
     for (auto it = c.cache_items_list.begin(); it != c.cache_items_list.end(); ++it){

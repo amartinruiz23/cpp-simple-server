@@ -40,12 +40,18 @@ public:
     void test_sock();
 
     //! Getter function for the socket file descriptor
+    /*!
+    \return socket file descriptor
+    */
     int get_sock();
 
     //! Getter function for the address struct
+    /*!
+    \return address struct
+    */
     struct sockaddr_in get_address();
 
-    //! VIrtual default destructor
+    //! Virtual default destructor
     virtual ~Socket() = default;
 };
 

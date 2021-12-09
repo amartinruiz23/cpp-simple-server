@@ -27,7 +27,6 @@ Value \& \hyperlink{classCache_ae2c5a764bec9cf7bcc455d37377ff477}{get} (const Ke
 \begin{DoxyCompactList}\small\item\em Queries a value from the cache. \end{DoxyCompactList}\item 
 bool \hyperlink{classCache_a3cbee30a98148ba6e15e28e4e096d995}{exists} (const Key \&key)
 \begin{DoxyCompactList}\small\item\em Queries if a value is in the cache. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classCache_a6b13a48d9bc1217c9408e66543655e67}\label{classCache_a6b13a48d9bc1217c9408e66543655e67}} 
 size\+\_\+t \hyperlink{classCache_a6b13a48d9bc1217c9408e66543655e67}{Size} ()
 \begin{DoxyCompactList}\small\item\em Queries the current size of the cache. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classCache_addfc9aa7e42dcac6ab1ba103a75cdc66}\label{classCache_addfc9aa7e42dcac6ab1ba103a75cdc66}} 
@@ -36,7 +35,6 @@ void \hyperlink{classCache_addfc9aa7e42dcac6ab1ba103a75cdc66}{clear} ()
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classCache_a11049cc49065d8bad3f6154e155922f1}\label{classCache_a11049cc49065d8bad3f6154e155922f1}} 
 std\+::ostream \& \hyperlink{classCache_a11049cc49065d8bad3f6154e155922f1}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classCache}{Cache} \&c)
 \begin{DoxyCompactList}\small\item\em Output operator. Writes the cache content. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -83,6 +81,9 @@ Queries if a value is in the cache.
 {\em key} & specifies the key to be queried \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in the value exists in the cache, false if it does not 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classCache_ae2c5a764bec9cf7bcc455d37377ff477}\label{classCache_ae2c5a764bec9cf7bcc455d37377ff477}} 
 \index{Cache@{Cache}!get@{get}}
 \index{get@{get}!Cache@{Cache}}
@@ -99,6 +100,9 @@ Queries a value from the cache.
 {\em key} & specifies the key to be queried \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the value of error 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classCache_a7b54629fb513d4b1652951bb713a0635}\label{classCache_a7b54629fb513d4b1652951bb713a0635}} 
 \index{Cache@{Cache}!put@{put}}
 \index{put@{put}!Cache@{Cache}}
@@ -117,6 +121,37 @@ Puts a key and its value in the cache.
 {\em value} & specifies the value to be inserted \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classCache_a6b13a48d9bc1217c9408e66543655e67}\label{classCache_a6b13a48d9bc1217c9408e66543655e67}} 
+\index{Cache@{Cache}!Size@{Size}}
+\index{Size@{Size}!Cache@{Cache}}
+\subsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily template$<$typename Key, typename Value$>$ \\
+size\+\_\+t \hyperlink{classCache}{Cache}$<$ Key, Value $>$\+::Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Queries the current size of the cache. 
+
+\begin{DoxyReturn}{Returns}
+size of the cache 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCache_a11049cc49065d8bad3f6154e155922f1}\label{classCache_a11049cc49065d8bad3f6154e155922f1}} 
+\index{Cache@{Cache}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Cache@{Cache}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename Key, typename Value$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classCache}{Cache}$<$ Key, Value $>$ \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output operator. Writes the cache content. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the stream 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

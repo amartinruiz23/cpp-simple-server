@@ -23,15 +23,13 @@ virtual int \hyperlink{classSocket_a2483ca0900b0d55cfeb4b6cf5724c1e7}{connect\+\
 \mbox{\Hypertarget{classSocket_a2a3fd953636d01a796d8b648c785d625}\label{classSocket_a2a3fd953636d01a796d8b648c785d625}} 
 void \hyperlink{classSocket_a2a3fd953636d01a796d8b648c785d625}{test\+\_\+sock} ()
 \begin{DoxyCompactList}\small\item\em Test function for the socket. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classSocket_a134a2436c9fff81048d7815eca284232}\label{classSocket_a134a2436c9fff81048d7815eca284232}} 
 int \hyperlink{classSocket_a134a2436c9fff81048d7815eca284232}{get\+\_\+sock} ()
 \begin{DoxyCompactList}\small\item\em Getter function for the socket file descriptor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classSocket_a6a36bc269e33e3ffda2c224a9b8bf961}\label{classSocket_a6a36bc269e33e3ffda2c224a9b8bf961}} 
 struct sockaddr\+\_\+in \hyperlink{classSocket_a6a36bc269e33e3ffda2c224a9b8bf961}{get\+\_\+address} ()
 \begin{DoxyCompactList}\small\item\em Getter function for the address struct. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classSocket_a073b4b728d8b6e366db9caa37a59dbbb}\label{classSocket_a073b4b728d8b6e366db9caa37a59dbbb}} 
 virtual \hyperlink{classSocket_a073b4b728d8b6e366db9caa37a59dbbb}{$\sim$\+Socket} ()=default
-\begin{DoxyCompactList}\small\item\em V\+Irtual default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Virtual default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -85,6 +83,32 @@ Virtual connection function. Must be implemented as bind (server) or connect (cl
 
 Implemented in \hyperlink{classBindingSocket_a02a8a46a6a5d5c3205d53f2a9840455a}{Binding\+Socket}.
 
+\mbox{\Hypertarget{classSocket_a6a36bc269e33e3ffda2c224a9b8bf961}\label{classSocket_a6a36bc269e33e3ffda2c224a9b8bf961}} 
+\index{Socket@{Socket}!get\+\_\+address@{get\+\_\+address}}
+\index{get\+\_\+address@{get\+\_\+address}!Socket@{Socket}}
+\subsubsection{\texorpdfstring{get\+\_\+address()}{get\_address()}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in Socket\+::get\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function for the address struct. 
+
+\begin{DoxyReturn}{Returns}
+address struct 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSocket_a134a2436c9fff81048d7815eca284232}\label{classSocket_a134a2436c9fff81048d7815eca284232}} 
+\index{Socket@{Socket}!get\+\_\+sock@{get\+\_\+sock}}
+\index{get\+\_\+sock@{get\+\_\+sock}!Socket@{Socket}}
+\subsubsection{\texorpdfstring{get\+\_\+sock()}{get\_sock()}}
+{\footnotesize\ttfamily int Socket\+::get\+\_\+sock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter function for the socket file descriptor. 
+
+\begin{DoxyReturn}{Returns}
+socket file descriptor 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

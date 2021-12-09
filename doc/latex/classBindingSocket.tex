@@ -38,12 +38,10 @@ void \hyperlink{classBindingSocket_a76086880c62746d2247befee6a3fe68f}{test\+\_\+
 \mbox{\Hypertarget{classBindingSocket_aa24ab4e79fd3b30b415b3e96eae14a83}\label{classBindingSocket_aa24ab4e79fd3b30b415b3e96eae14a83}} 
 void \hyperlink{classBindingSocket_aa24ab4e79fd3b30b415b3e96eae14a83}{test\+\_\+listening} ()
 \begin{DoxyCompactList}\small\item\em Test function for the port listening. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classBindingSocket_acaf64a54e51eea07f5f7268b805ab3d0}\label{classBindingSocket_acaf64a54e51eea07f5f7268b805ab3d0}} 
 int \hyperlink{classBindingSocket_acaf64a54e51eea07f5f7268b805ab3d0}{get\+\_\+connection} ()
-\begin{DoxyCompactList}\small\item\em Getter for the connection binding, 0 on success, -\/1 on failure. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classBindingSocket_a562609b198ba3db277549ae4d465d1c2}\label{classBindingSocket_a562609b198ba3db277549ae4d465d1c2}} 
+\begin{DoxyCompactList}\small\item\em Getter for the connection binding. \end{DoxyCompactList}\item 
 int \hyperlink{classBindingSocket_a562609b198ba3db277549ae4d465d1c2}{get\+\_\+listening} ()
-\begin{DoxyCompactList}\small\item\em Getter for the listening, 0 on success, -\/1 on failure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Getter for the listening. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -95,10 +93,39 @@ Implements the connection to the network using the bind function.
 {\em service} & address specifies the adress struct for the connection \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{classSocket_a2483ca0900b0d55cfeb4b6cf5724c1e7}{Socket}.
 
+\mbox{\Hypertarget{classBindingSocket_acaf64a54e51eea07f5f7268b805ab3d0}\label{classBindingSocket_acaf64a54e51eea07f5f7268b805ab3d0}} 
+\index{Binding\+Socket@{Binding\+Socket}!get\+\_\+connection@{get\+\_\+connection}}
+\index{get\+\_\+connection@{get\+\_\+connection}!Binding\+Socket@{Binding\+Socket}}
+\subsubsection{\texorpdfstring{get\+\_\+connection()}{get\_connection()}}
+{\footnotesize\ttfamily int Binding\+Socket\+::get\+\_\+connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the connection binding. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBindingSocket_a562609b198ba3db277549ae4d465d1c2}\label{classBindingSocket_a562609b198ba3db277549ae4d465d1c2}} 
+\index{Binding\+Socket@{Binding\+Socket}!get\+\_\+listening@{get\+\_\+listening}}
+\index{get\+\_\+listening@{get\+\_\+listening}!Binding\+Socket@{Binding\+Socket}}
+\subsubsection{\texorpdfstring{get\+\_\+listening()}{get\_listening()}}
+{\footnotesize\ttfamily int Binding\+Socket\+::get\+\_\+listening (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the listening. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

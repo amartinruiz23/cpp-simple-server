@@ -31,6 +31,7 @@ public:
   /*!
   \param sock specifies the socket file descriptor for the connection
   \param service address specifies the adress struct for the connection
+  \return 0 on success, -1 on failure
   */
   int connect_to_network(int sock, struct sockaddr_in address);
 
@@ -41,9 +42,15 @@ public:
   void test_connection();
   //! Test function for the port listening
   void test_listening();
-  //! Getter for the connection binding, 0 on success, -1 on failure
+  //! Getter for the connection binding
+  /*!
+  //\return 0 on success, -1 on failure
+  */
   int get_connection();
-  //! Getter for the listening, 0 on success, -1 on failure
+  //! Getter for the listening
+  /*!
+  \return 0 on success, -1 on failure
+  */
   int get_listening();
 
 };
